@@ -24,13 +24,19 @@ jobs:
 
       - uses: hashicorp/setup-terraform@v4
 
+      - name: Install tflint
+        uses: terraform-linters/setup-tflint@v6
+        with:
+          tflint_version: latest
+
       - name: Install pre-commit
         run: pip install pre-commit
 
       - name: Run pre-commit hooks
         # terraform_validate requires `terraform init` - skipped in CI; covered by checkov.
         # terraform_docs requires terraform-docs binary - skipped in CI; runs locally.
-        run: SKIP=terraform_validate,terraform_docs pre-commit run --all-files
+        # no-commit-to-branch is a local guard only - not meaningful in CI.
+        run: SKIP=terraform_validate,terraform_docs,no-commit-to-branch pre-commit run --all-files
 
   checkov:
     runs-on: ubuntu-latest
