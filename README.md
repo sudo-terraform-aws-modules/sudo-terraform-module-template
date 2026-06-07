@@ -5,13 +5,48 @@ A foundational template for creating reusable Terraform modules with best practi
 sudo-terraform-module-template/
 ├── .github/
 │   └── workflows/
-│       └── main.yml           # CI/CD workflow for linting and testing Terraform configurations
-├── .gitignore                 # Git ignore file for Terraform, IDEs, and other unwanted files
-├── .pre-commit-config.yaml    # Pre-commit hooks configuration (e.g., Terraform lint, format)
-├── LICENSE                    # License file for the project
-├── main.tf                    # Entry point for the Terraform configuration
-├── outputs.tf                 # Definitions of module outputs
-├── README.md                  # Project documentation (this file)
-├── variables.tf               # Definitions of module input variables
-└── versions.tf                # Terraform and provider version constraints
+│       └── main.yml               # CI pipeline - pre-commit and checkov jobs
+├── examples/
+│   ├── complete/                  # Full-featured usage example
+│   └── minimal/                   # Minimal working example
+├── .gitignore                     # Terraform, IDE, and OS ignores
+├── .pre-commit-config.yaml        # Conventional commits, fmt, tflint, branch protection
+├── .tflint.hcl                    # TFLint rule configuration
+├── checkov.yaml                   # Checkov security scan config
+├── LICENSE                        # License file
+├── main.tf                        # Primary module resources
+├── Makefile                       # Developer shortcuts: fmt, lint, checkov, docs, validate
+├── outputs.tf                     # Module output values
+├── README.md                      # Project documentation (this file)
+├── variables.tf                   # Module input variables
+└── versions.tf                    # Terraform and provider version constraints
 ```
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+| ---- | ------- |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.0.0 |
+
+## Providers
+
+No providers.
+
+## Modules
+
+No modules.
+
+## Resources
+
+No resources.
+
+## Inputs
+
+No inputs.
+
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
