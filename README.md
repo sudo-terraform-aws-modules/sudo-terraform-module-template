@@ -1,39 +1,35 @@
-# sudo-terraform-module-template
+<!-- prettier-ignore-start -->
+# terraform-aws-\<name\>
+
+> Template README. Replace `<name>` and the `...` placeholders, fill in each section, then delete this note.
+
+| [![Terraform CI](https://github.com/sudo-terraform-aws-modules/terraform-aws-<name>/actions/workflows/main.yml/badge.svg)](https://github.com/sudo-terraform-aws-modules/terraform-aws-<name>/actions/workflows/main.yml) | [![Terraform](https://img.shields.io/badge/terraform-%3E%3D1.3.0-7B42BC?logo=terraform)](versions.tf) | [![AWS provider](https://img.shields.io/badge/aws%20provider-%3E%3D6.0.0-FF9900)](versions.tf) | [![License](https://img.shields.io/github/license/sudo-terraform-aws-modules/terraform-aws-<name>)](LICENSE) |
+| --- | --- | --- | --- |
 
 <img width="600" alt="SUDO x AWS" src="https://github.com/user-attachments/assets/f7044ff9-afce-4811-91c6-2f3c95635abb" />
 
-A foundational template for creating reusable Terraform modules with best practices, pre-configured files, and workflows.
+Terraform module that creates ...
 
-```plaintext
-sudo-terraform-module-template/
-├── .claude/
-│   ├── CLAUDE.md                  # AI assistant context (single source of truth)
-│   └── skills/
-│       └── terraform/
-│           └── SKILL.md           # Terraform module conventions & rules
-├── .github/
-│   └── workflows/
-│       └── main.yml               # CI pipeline - pre-commit and checkov jobs
-├── scripts/
-│   └── hooks/
-│       └── pre-push-protect-branches.sh  # Rejects pushes to main/master
-├── examples/
-│   ├── complete/                  # Full-featured usage example
-│   └── minimal/                   # Minimal working example
-├── AGENTS.md -> .claude/CLAUDE.md # Symlink for AGENTS.md-aware tools
-├── .gitignore                     # Terraform, IDE, and OS ignores
-├── .pre-commit-config.yaml        # Conventional commits, fmt, tflint, branch protection
-├── .tflint.hcl                    # TFLint rule configuration
-├── checkov.yaml                   # Checkov security scan config
-├── CHANGELOG.md                   # Release notes, Keep a Changelog format
-├── LICENSE                        # License file
-├── main.tf                        # Primary module resources
-├── Makefile                       # Developer shortcuts: fmt, lint, checkov, docs, validate
-├── outputs.tf                     # Module output values
-├── README.md                      # Project documentation (this file)
-├── variables.tf                   # Module input variables
-└── versions.tf                    # Terraform and provider version constraints
+The defaults ...
+
+## Usage
+
+```hcl
+module "<name>" {
+  source  = "sudo-terraform-aws-modules/<name>/aws"
+  version = "1.0.0"
+
+  ...
+}
 ```
+
+See [examples/minimal](examples/minimal) and [examples/complete](examples/complete).
+
+## Things to know before you apply
+
+**Settings fixed at creation.** ...
+
+<!-- prettier-ignore-end -->
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
